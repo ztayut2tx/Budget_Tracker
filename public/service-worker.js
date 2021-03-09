@@ -17,7 +17,7 @@ self.addEventListener("install", (event) => {
     );
 
 });
-
+//Activate Handler
 self.addEventListener("activate", (event) => {
     const currentCaches = [STATIC_CACHE, RUNTIME];
     event.waitUntil(
@@ -34,7 +34,7 @@ self.addEventListener("activate", (event) => {
 }).then(() => self.clients.claim())
     );
 });
-
+//Fetch cached data
 self.addEventListener("fetch", (event) => {
     if (
         event.request.method !== "GET" ||
